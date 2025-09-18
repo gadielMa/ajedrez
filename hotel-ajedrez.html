@@ -28,10 +28,37 @@
             text-align: center;
             margin-bottom: 40px;
             padding: 30px 0;
-            background: linear-gradient(135deg, #2c3e50, #34495e);
+            background: linear-gradient(135deg, #e74c3c, #f39c12, #9b59b6, #3498db);
+            background-size: 300% 300%;
+            animation: gradientShift 6s ease infinite;
             color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shine 3s ease-in-out infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            50% { left: 100%; }
+            100% { left: 100%; }
         }
 
         .header h1 {
@@ -40,12 +67,31 @@
             text-transform: uppercase;
             letter-spacing: 3px;
             margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(45deg, #fff, #f1c40f, #fff);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: textShine 4s ease-in-out infinite;
+        }
+
+        @keyframes textShine {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
 
         .header p {
             font-size: 1.2em;
-            opacity: 0.9;
+            opacity: 0.95;
             font-style: italic;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            font-weight: 500;
+            color: #fff;
         }
 
         .products-grid {
@@ -170,7 +216,7 @@
     <div class="container">
         <div class="header">
             <h1>Hotel Ajedrez</h1>
-            <p>Nuestros Productos</p>
+            <p>Nuestros Productos de Real Vibe</p>
         </div>
 
         <div class="products-grid">
