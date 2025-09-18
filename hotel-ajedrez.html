@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Ajedrez - Catálogo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 3em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 20px 0;
+        }
+
+        .product-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            aspect-ratio: 1;
+            background-color: #e0e0e0;
+            background-image: linear-gradient(45deg, #f0f0f0 25%, transparent 25%), 
+                              linear-gradient(-45deg, #f0f0f0 25%, transparent 25%), 
+                              linear-gradient(45deg, transparent 75%, #f0f0f0 75%), 
+                              linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: #666;
+            object-fit: cover;
+            border-bottom: 3px solid #34495e;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .placeholder-text {
+            text-align: center;
+            font-weight: bold;
+            color: #888;
+        }
+
+        .product-info {
+            padding: 20px;
+            text-align: center;
+            background: white;
+        }
+
+        .product-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .product-specs {
+            font-size: 0.95em;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2.2em;
+                letter-spacing: 2px;
+            }
+            
+            .header p {
+                font-size: 1em;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+            }
+            
+            .product-image {
+                aspect-ratio: 1;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+                letter-spacing: 1px;
+            }
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #666;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Hotel Ajedrez</h1>
+            <p>Nuestros Productos</p>
+        </div>
+
+        <div class="products-grid">
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="Articulo1.jpg" alt="Artículo 1">
+                </div>
+                <div class="product-info">
+                    <div class="product-title">1 - Vibe</div>
+                    <div class="product-specs">21 cm x 3 cm</div>
+                </div>
+            </div>
+
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="Articulo2.jpg" alt="Artículo 2">
+                </div>
+                <div class="product-info">
+                    <div class="product-title">2 - Vibe</div>
+                    <div class="product-specs">15 cm x 2,5 cm</div>
+                </div>
+            </div>
+
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="Articulo3.jpg" alt="Artículo 3">
+                </div>
+                <div class="product-info">
+                    <div class="product-title">3 - Vibe</div>
+                    <div class="product-specs">20 cm x 4 cm</div>
+                </div>
+            </div>
+
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="Articulo4.jpg" alt="Artículo 4">
+                </div>
+                <div class="product-info">
+                    <div class="product-title">4 - Anillo</div>
+                    <div class="product-specs">4 cm (3 Pilas)</div>
+                </div>
+            </div>
+
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="Articulo5.jpg" alt="Artículo 5">
+                </div>
+                <div class="product-info">
+                    <div class="product-title">5 - Prótesis</div>
+                    <div class="product-specs">17 cm x 3,5 cm</div>
+                </div>
+            </div>
+
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="Articulo6.jpg" alt="Artículo 6">
+                </div>
+                <div class="product-info">
+                    <div class="product-title">6 - Prótesis</div>
+                    <div class="product-specs">20 cm x 4 cm</div>
+                </div>
+            </div>
+
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="Articulo7.jpg" alt="Artículo 7">
+                </div>
+                <div class="product-info">
+                    <div class="product-title">7 - Prótesis</div>
+                    <div class="product-specs">18 cm x 3 cm</div>
+                </div>
+            </div>
+
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="Articulo8.jpg" alt="Artículo 8">
+                </div>
+                <div class="product-info">
+                    <div class="product-title">8 - Vibe</div>
+                    <div class="product-specs">16 cm x 3 cm (3 Pilas)</div>
+                </div>
+            </div>
+
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="Articulo9.jpg" alt="Artículo 9">
+                </div>
+                <div class="product-info">
+                    <div class="product-title">9 - Prostatic</div>
+                    <div class="product-specs">6,21 cm</div>
+                </div>
+            </div>
+
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="Articulo10.jpg" alt="Artículo 10">
+                </div>
+                <div class="product-info">
+                    <div class="product-title">10 - Vibe</div>
+                    <div class="product-specs">6,5 cm (3 Pilas)</div>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="Articulo11.jpg" alt="Artículo 11">
+                </div>
+                <div class="product-info">
+                    <div class="product-title">11 - Anillo doble</div>
+                    <div class="product-specs">4,11 cm</div>
+                </div>
+            </div>
+
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="Articulo12.jpg" alt="Artículo 12">
+                </div>
+                <div class="product-info">
+                    <div class="product-title">12 - Vibe</div>
+                    <div class="product-specs">21 cm x 4,5 cm</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Hotel Ajedrez - 2025</p>
+        </div>
+    </div>
+</body>
+</html>

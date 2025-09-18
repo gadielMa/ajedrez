@@ -1,0 +1,1 @@
+export PATH="$HOME/.local/bin:$PATH" && weasyprint hotel-ajedrez.html hotel-ajedrez.pdf
