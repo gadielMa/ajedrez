@@ -13,9 +13,11 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #1a1a1a;
+            background: linear-gradient(135deg, #2c1810 0%, #1a1a1a 50%, #2c1810 100%);
+            background-attachment: fixed;
             color: #ffffff;
             line-height: 1.6;
+            min-height: 100vh;
         }
 
         .container {
@@ -63,20 +65,22 @@
         }
 
         .header h1 {
-            font-size: 3em;
-            font-weight: bold;
+            font-size: 3.2em;
+            font-weight: 900;
+            font-family: 'Georgia', 'Times New Roman', serif;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.9);
             position: relative;
             z-index: 1;
-            background: linear-gradient(45deg, #fff, #FFD700, #fff);
-            background-size: 200% 200%;
+            color: #ffffff;
+            background: linear-gradient(45deg, #ffffff 0%, #f8f8f8 30%, #DC143C 60%, #ffffff 100%);
+            background-size: 300% 300%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: textShine 4s ease-in-out infinite;
+            animation: textShine 6s ease-in-out infinite;
         }
 
         @keyframes textShine {
@@ -84,15 +88,27 @@
             50% { background-position: 100% 50%; }
         }
 
+        @keyframes subtitleShine {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
         .header p {
-            font-size: 1.2em;
-            opacity: 0.95;
+            font-size: 1.4em;
+            font-family: 'Georgia', 'Times New Roman', serif;
             font-style: italic;
             position: relative;
             z-index: 1;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-            font-weight: 500;
-            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            font-weight: 400;
+            color: #f8f8f8;
+            background: linear-gradient(45deg, #f8f8f8, #DC143C, #f8f8f8);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: subtitleShine 8s ease-in-out infinite;
+            margin-top: 10px;
         }
 
         .products-grid {
@@ -103,19 +119,32 @@
         }
 
         .product-item {
-            background: #2a2a2a;
+            background: linear-gradient(145deg, #3a2a2a 0%, #2a1f1f 50%, #2a2a2a 100%);
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 8px 25px rgba(220, 20, 60, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 25px rgba(220, 20, 60, 0.25), 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
             display: flex;
             flex-direction: column;
-            border: 1px solid #DC143C;
+            border: 2px solid #DC143C;
+            position: relative;
+        }
+
+        .product-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(220, 20, 60, 0.1), transparent, rgba(220, 20, 60, 0.05));
+            border-radius: 15px;
+            pointer-events: none;
         }
 
         .product-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 35px rgba(220, 20, 60, 0.4);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(220, 20, 60, 0.4), 0 8px 25px rgba(0, 0, 0, 0.4);
             border-color: #FF6347;
         }
 
@@ -154,7 +183,9 @@
         .product-info {
             padding: 20px;
             text-align: center;
-            background: #2a2a2a;
+            background: linear-gradient(145deg, #3a2a2a, #2a1f1f);
+            position: relative;
+            z-index: 1;
         }
 
         .product-title {
